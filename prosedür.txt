@@ -26,7 +26,141 @@ BEGIN
 	 
 	 
 
+
 END
 GO
 
 Tamamlanmadý.......
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USE [Test]
+GO
+/****** Object:  StoredProcedure [dbo].[spAddDate]    Script Date: 9.10.2021 00:43:04 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spAddDate] 	
+	@BaslangicTarihi int,
+	@BitisTarihi int	
+AS
+
+BEGIN
+
+select * from STI where Tarih between @BaslangicTarihi and @BitisTarihi 
+
+
+
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USE [Test]
+GO
+/****** Object:  StoredProcedure [dbo].[spMalKoduDetail]    Script Date: 9.10.2021 00:55:10 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spMalKoduDetail]	
+@MalKodu varchar(30)
+AS
+BEGIN
+
+	select * from STI where MalKodu=@MalKodu
+	
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USE [Test]
+GO
+/****** Object:  StoredProcedure [dbo].[spMalKoduList]    Script Date: 9.10.2021 00:55:30 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spMalKoduList]	
+	
+AS
+BEGIN
+
+	Select MalKodu, ID from STK  
+	
+
+
+	
+END
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+USE [Test]
+GO
+/****** Object:  StoredProcedure [dbo].[spSTKFind]    Script Date: 9.10.2021 00:55:43 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+ALTER PROCEDURE [dbo].[spSTKFind] 
+	
+AS
+SELECT ID as SiraNo, IslemTur, EvrakNo, Tarih, Miktar from STI	
+	 
+
