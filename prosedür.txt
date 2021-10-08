@@ -1,0 +1,32 @@
+CREATE PROCEDURE spStockFind 
+	@MalKodu varchar(30),
+	@BaslangicTarihi datetime,
+	@BitisTarihi datetime	
+AS
+
+
+BEGIN
+
+	declare @Stok int = 0;
+
+	declare myCursor cursor for select @Stok
+	
+	
+
+	SELECT ID as SiraNo, IslemTur, EvrakNo, Tarih, Miktar  from STI,
+
+	(select case when IslemTur=0 then Miktar else 0 end as GirisMiktar) 
+	(select case when IslemTur=1 then Miktar else 0 end as CikisMiktar)
+
+	(select case when IslemTur0 then @Stok+=Miktar)
+	(select case when IslemTur=1 then @Stok-=Miktar)
+ 
+ open myCursor fetch next from myCursor into @Stok
+	while @@FETCH_STATUS = 0
+	 
+	 
+
+END
+GO
+
+Tamamlanmadý.......
